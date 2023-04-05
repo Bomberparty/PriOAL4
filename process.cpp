@@ -1,6 +1,6 @@
 #include "process.hpp"
 
-void process(bool repeatable) {
+bool process(bool repeatable) {
     std::string *ans = new std::string;
     std::string line;
     while(true) {
@@ -44,4 +44,5 @@ void process(bool repeatable) {
             continue;
         }
     }
+    return repeatable;
 }
