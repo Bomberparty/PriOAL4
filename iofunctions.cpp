@@ -1,9 +1,9 @@
-#include <iofunctions.hpp>
-#include <constants.hpp>
+#include "iofunctions.hpp"
+#include "constants.hpp"
 
 std::string console_input() {
     std::string input;
-    std::cout << "Введите произвольную строку: ";
+    std::cout << "Type something: ";
     std::getline(std::cin, input);
 
     return input;

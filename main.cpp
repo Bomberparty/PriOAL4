@@ -1,5 +1,3 @@
-#include "iofunctions.cpp"
-#include "functions.cpp"
 #include "process.cpp"
 
 int main(){
@@ -10,7 +8,7 @@ int main(){
 
         std::string *ans =  new std::string;
         std::cout << "Do you wanna repeat process? [Y/n]: ";
-
+        std::getline(std::cin, *ans);
         while(true) {        
             if(*ans == "Y" || *ans == "y") {
                 break;

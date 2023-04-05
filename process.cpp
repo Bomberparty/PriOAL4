@@ -1,20 +1,18 @@
-#include <process.hpp>
+#include "process.hpp"
 
 void process(bool repeatable) {
-    std::string *ans;
-    std::string *line;
+    std::string *ans = new std::string;
+    std::string line;
     while(true) {
         std::cout << "Hello, dear user. Do you prefer console of file input? [file/console]: ";
         std::getline(std::cin, *ans);
         if (*ans == "file" ) {
-            *line = file_input();
-            delete ans;
+            line = file_input();
             repeatable = false;
             break;
         }
         else if (*ans == "console") {
-            *line = console_input();
-            delete ans;
+            line = console_input();
             break;
         }
         else
@@ -25,22 +23,18 @@ void process(bool repeatable) {
         }
     }
 
-    *line = string_transform(*line);
-
-    std::string *ans;
+    line = string_transform(line);
     while(true) {
         std::cout << "Dear user, it's time to choose the output method. Console or file [file/console]: ";
         std::getline(std::cin, *ans);
         if (*ans == "file" ) {
-            file_output(*line);
+            file_output(line);
             delete ans;
-            delete line;
             break;
         }
         else if (*ans == "console") {
-            console_output(*line);
+            console_output(line);
             delete ans;
-            delete line;
             break;
         }
         else
